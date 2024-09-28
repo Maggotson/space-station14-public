@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseUplinkRadio
+  name: A ROME SMELLING RADIO WITH PIRATY TOONS GOING ON FOR THE PURPOSE OF DEBUG, MATES! #sorre
+  id: BaseUplinkRadioPirateDebug
+  suffix: PIRATE, DEBUG
+  components:
+  - type: Store
+    preset: StorePresetPirate
+    balance:
+      Doubloon: 10000000

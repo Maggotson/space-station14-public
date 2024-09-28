@@ -12,6 +12,9 @@
     damageContainers:
     - Inorganic
     - Silicon
+  - type: Tag
+    tags:
+    - HudDiagnostic
 
 - type: entity
   parent: ClothingEyesBase
@@ -62,6 +65,9 @@
   - type: StealTarget
     stealGroup: ClothingEyesHudBeer
   - type: SolutionScanner
+  - type: Tag
+    tags:
+    - HudDiagnostic
 
 - type: entity
   parent: ClothingEyesBase
@@ -227,6 +233,9 @@
     sprite: Clothing/Eyes/Hud/medpatch.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/medpatch.rsi
+  - type: Tag
+    tags:
+    - EyepatchMedical
 
 - type: entity
   parent: ClothingEyesHudSecurity
@@ -238,6 +247,9 @@
     sprite: Clothing/Eyes/Hud/secpatch.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/secpatch.rsi
+  - type: Tag
+    tags:
+    - EyepatchSecurity
 
 - type: entity
   parent: ClothingEyesHudBeer
@@ -249,6 +261,9 @@
     sprite: Clothing/Eyes/Hud/beerpatch.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/beerpatch.rsi
+  - type: Tag
+    tags:
+    - EyepatchBeer
 
 - type: entity
   parent: ClothingEyesBase
@@ -264,3 +279,6 @@
     damageContainers:
     - Inorganic
     - Silicon
+  - type: Tag
+    tags:
+    - EyepatchDiagnostic

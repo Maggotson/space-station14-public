@@ -1,0 +1,52 @@
+- type: reaction
+  id: PoisonWine
+  reactants:
+    Wine:
+      amount: 5
+    ToxinsSpecial:
+      amount: 5
+  products:
+    PoisonWine: 10
+
+- type: reaction
+  id: MeatWine
+  reactants:
+    Wine:
+      amount: 1
+    UncookedAnimalProteins:
+      amount: 1
+  products:
+    MeatWine: 2
+
+- type: reaction
+  id: Vermouth
+  reactants:
+    Wine:
+      amount: 1
+    Benzene:
+      amount: 1
+  products:
+    Vermouth: 2
+
+- type: reaction
+  id: WineEssence
+  reactants:
+    Wine:
+      amount: 1
+    VampireWine:
+      amount: 1
+    Vermouth:
+      amount: 1
+    AcidSpit:
+      amount: 1
+    MeatWine:
+      amount: 1
+    NTCahors:
+      amount: 1
+    PoisonWine:
+      amount: 1
+    PirateEssence:
+      amount: 1
+  products:
+    WineEssence: 8
+    

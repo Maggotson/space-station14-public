@@ -8,6 +8,7 @@
     - Zombie
     - Revolutionary
     - DeathSquad # Imperial Space faction
+    - Pirate
 
 - type: npcFaction
   id: NanoTrasen
@@ -17,6 +18,7 @@
   - Xeno
   - Zombie
   - Revolutionary
+  - Pirate
 
 - type: npcFaction
   id: Mouse
@@ -43,7 +45,8 @@
   - PetsNT
   - Zombie
   - Revolutionary
-  - DeathSquad # Imperial Space faction
+  - DeathSquad
+  - Pirate # Imperial Space faction
 
 - type: npcFaction
   id: SimpleNeutral
@@ -56,7 +59,8 @@
   - Xeno
   - PetsNT
   - Zombie
-  - DeathSquad # Imperial Space faction
+  - DeathSquad
+  - Pirate # Imperial Space faction
 
 - type: npcFaction
   id: Xeno
@@ -67,7 +71,8 @@
   - PetsNT
   - Zombie
   - Revolutionary
-  - DeathSquad # Imperial Space faction
+  - DeathSquad
+  - Pirate # Imperial Space faction
 
 - type: npcFaction
   id: Zombie
@@ -79,7 +84,8 @@
   - Passive
   - PetsNT
   - Revolutionary
-  - DeathSquad # Imperial Space faction
+  - DeathSquad
+  - Pirate # Imperial Space faction
 
 - type: npcFaction
   id: Revolutionary
@@ -88,4 +94,16 @@
   - Zombie
   - SimpleHostile
   - Dragon
-  - DeathSquad # Imperial Space faction
+  - DeathSquad
+  - Pirate # Imperial Space faction
+
+- type: npcFaction
+  id: Pirate
+  hostile:
+  - NanoTrasen
+  - Zombie
+  - SimpleHostile
+  - Dragon
+  - DeathSquad
+  - Syndicate
+  - Revolutionary # Imperial Space faction

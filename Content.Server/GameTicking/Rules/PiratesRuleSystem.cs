@@ -28,6 +28,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Server.Humanoid;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -50,6 +51,7 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
+    [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string GameRuleId = "Pirates";
@@ -61,7 +63,7 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
     private const string SpeciesId = "Human";
 
     [ValidatePrototypeId<NpcFactionPrototype>]
-    private const string PirateFactionId = "Syndicate";
+    private const string PirateFactionId = "Pirate";
 
     [ValidatePrototypeId<NpcFactionPrototype>]
     private const string EnemyFactionId = "NanoTrasen";
@@ -237,19 +239,21 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
             {
                 var sex = _random.Prob(0.5f) ? Sex.Male : Sex.Female;
                 var gender = sex == Sex.Male ? Gender.Male : Gender.Female;
-
                 var name = _namingSystem.GetName(SpeciesId, gender);
-
                 var session = ops[i];
                 var newMind = _mindSystem.CreateMind(session.UserId, name);
                 _mindSystem.SetUserId(newMind, session.UserId);
-
                 var mob = Spawn(MobId, _random.Pick(spawns));
-                _metaData.SetEntityName(mob, name);
+
 
                 _mindSystem.TransferTo(newMind, mob);
                 var profile = _prefs.GetPreferences(session.UserId).SelectedCharacter as HumanoidCharacterProfile;
                 _stationSpawningSystem.EquipStartingGear(mob, pirateGear, profile);
+                if (profile != null){
+                _humanoid.LoadProfile(mob, profile);
+                name = profile.Name;
+                }
+                _metaData.SetEntityName(mob, name);
 
                 _npcFaction.RemoveFaction(mob, EnemyFactionId, false);
                 _npcFaction.AddFaction(mob, PirateFactionId);
@@ -285,7 +289,8 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
             GameTicker.StartGameRule(GameRuleId, out var ruleEntity);
             pirateRule = Comp<PiratesRuleComponent>(ruleEntity);
         }
-
+        _npcFaction.RemoveFaction(entity, EnemyFactionId, false);
+        _npcFaction.AddFaction(entity, PirateFactionId);
         // Notificate every player about a pirate antagonist role with sound
         if (mind.Session != null)
         {

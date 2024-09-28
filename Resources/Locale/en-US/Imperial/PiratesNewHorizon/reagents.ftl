@@ -1,0 +1,9 @@
+reagent-name-pirate = muddy harbour
+reagent-desc-pirate = Filled with sand and muddy water, the mixture summons a giant pirate's pal to help with all the troubles.
+muddy-harbour-popup = You feel your organs burning inside, while getting to feel otherworld appearance.
+reagent-name-wineessence = wine essence
+reagent-description-wineessence = Magestic blood-looking substance, made of different kinds of wonderful wines. With it's magic power it's droplets rise, making a unbeliveable sight. No wonder, it is popular with vampires.
+reagent-name-beeressence = beer essence
+reagent-desc-beeressence = Extremely fluffy, light. Makes you feel, like you are floating.
+reagent-name-pirateessence = Pirate essence
+reagent-desc-pirateessence = unbeliveably black and oily, as all pirates are inside. Not consumable, but is required for pirate delicacies.

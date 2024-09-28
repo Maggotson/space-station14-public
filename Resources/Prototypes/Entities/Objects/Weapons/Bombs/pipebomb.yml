@@ -1,5 +1,5 @@
 - type: entity
-  parent: GrenadeBase
+  parent: BaseItem
   id: PipeBomb
   name: pipe bomb
   description: An improvised explosive made from pipes and wire.
@@ -10,9 +10,8 @@
     - state: base
       map: ["enum.TriggerVisualLayers.Base"]
     - state: wires
-  - type: OnUseTimerTrigger # todo: make it activate through welder/lighter/fire instead
+  - type: TriggerOnHeat # WE DID IT BOYS!! I did the todo, fella (it was "todo: make it activate through welder/lighter/fire instead")
     delay: 5
-    examinable: false
     initialBeepDelay: 0
     beepSound: /Audio/Effects/lightburn.ogg
   - type: RandomTimerTrigger
@@ -30,6 +29,30 @@
   - type: Construction
     graph: PipeBomb
     node: pipebomb
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: AnimationPlayer
+  - type: GenericVisualizer
+    visuals:
+      enum.Trigger.TriggerVisuals.VisualState:
+        enum.ConstructionVisuals.Layer:
+          Primed: { state: primed }
+          Unprimed: { state: icon }
+  - type: Item
+    size: Small
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - Belt
 
 - type: entity
   parent: BaseItem

@@ -1,0 +1,13 @@
+- type: storePreset
+  id: StorePresetPirate
+  storeName: Ol' Mate Freebooter
+  categories:
+  - PiratesAmmunition
+  - PiratesUtilities
+  - PiratesMedicine
+  - PiratesBooze
+  - PiratesPointless
+  currencyWhitelist:
+  - Doubloon
+
+  #ilovepirates

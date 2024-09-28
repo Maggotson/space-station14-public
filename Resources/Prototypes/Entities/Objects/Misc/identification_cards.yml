@@ -705,9 +705,7 @@
     - state: pirate
   - type: Access
     tags:
-    - NuclearOperative
-    - SyndicateAgent
-
+    - Pirate
 - type: entity
   parent: IDCardStandard
   id: PsychologistIDCard
