@@ -1,13 +1,13 @@
 - type: entity
   name: Abel the Cat
-  suffix: Ведьмы
+  suffix: Vl, Ведьмы
   parent: SimpleMobBase
   id: WitcherCatvOne
   description: An angry, big-eyed cat.
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Imperial\Witchers\Cats\Catv1.rsi
+    sprite: Imperial/Witchers/Cats/Catv1.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: catv1
