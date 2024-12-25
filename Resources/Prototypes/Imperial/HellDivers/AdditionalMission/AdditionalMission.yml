@@ -3,7 +3,6 @@
   id: AdditionalMission
   name: the larva in a capsule
   suffix: HellDivers
-  weight: 50
   components:
     - type: Sprite
       sprite: Imperial/HellDivers/AdditionalMission.rsi
